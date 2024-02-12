@@ -1,0 +1,64 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    display: flex;
+    height: 100vh;
+}
+input[type=text]{
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+button{
+    display: block;
+    margin: 1rem;
+    height: 2rem;
+    border-radius:5px ;
+}
+
+label{
+    display: inline-block;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    margin: 5rem;
+    width: 40rem;
+    height: 800px;
+    flex-wrap: wrap;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+#rotate-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 40rem;
+    height: 250px;
+    margin-bottom: 3rem;
+    background: rgb(47, 255, 137);
+    border-radius: 10px;
+}
+
+#split-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 40rem;
+    height: 250px;
+    margin-bottom: 10rem;
+    background: rgb(234, 247, 90);
+    border-radius: 10px;
+}

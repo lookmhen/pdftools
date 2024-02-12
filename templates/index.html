@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type"text/css" href="{{url_for('static',filename='style.css')}}">
+    <title>PDF Manipulator</title>
+
+</head>
+<body>
+    <h1>PDF Manipulator</h1>
+    <div class="container">
+        <div id="rotate-app">
+            <form action="/rotate" method="post" enctype="multipart/form-data">
+                <h1>Rotate</h1>
+                <input type="file" name="pdf_file" accept=".pdf">
+                <label for="page_numbers">Select Pages to Rotate:</label>
+                <input type="text" name="page_numbers" placeholder="2, 3">
+        
+                <label for="degrees">Select Degrees to Rotate:</label>
+                <input type="text" name="degrees" placeholder="90, 180">
+        
+                <button type="submit">Rotate Pages</button>
+            </form>
+        </div>
+        
+        <div id="split-app">
+            <form action="/split" method="post" enctype="multipart/form-data">
+                <h1>Split</h1>
+                <input type="file" name="pdf_file" accept=".pdf">
+                
+                <label for="start_page">Start Page:</label>
+                <input type="text" name="start_page" placeholder="e.g., 3">
+        
+                <label for="end_page">End Page:</label>
+                <input type="text" name="end_page" placeholder="e.g., 8">
+        
+                <button type="submit">Split Pages</button>
+            </form>
+        </div>
+       
+    </div>
+    
+</body>
+</html>
