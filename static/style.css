@@ -5,31 +5,47 @@
     box-sizing:border-box;
 }
 body{
-    display: flex;
-    height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: rgb(47, 46, 46);
+overflow: hidden;
+
 }
 input[type=text]{
     height: 30px;
     border-radius: 5px;
     outline: none;
     border: none;
+    
 }
 
+input[type=text]::placeholder{
+    text-align: center;
+}
 button{
     display: block;
+    position: absolute;
+    top: 185px;
+    right: 215px;
     margin: 1rem;
     height: 2rem;
+    width: 10rem;
     border-radius:5px ;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 label{
     display: inline-block;
+    font-weight: bolder;
 }
 .container{
     display:flex;
     flex-direction: column;
-    margin: 5rem;
-    width: 40rem;
+    margin: 1.5rem;
+    max-width: 40rem;
     height: 800px;
     flex-wrap: wrap;
 }
@@ -37,10 +53,11 @@ label{
 form{
     display: flex;
     flex-direction: column;
-    padding: 5rem;
+    padding: 40px 80px 80px;
 }
 #rotate-app{
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -53,6 +70,7 @@ form{
 
 #split-app{
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     text-align: center;

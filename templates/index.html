@@ -8,19 +8,19 @@
 
 </head>
 <body>
-    <h1>PDF Manipulator</h1>
+    <h1 style="color:white">PDF Rotate & Split</h1>
     <div class="container">
         <div id="rotate-app">
             <form action="/rotate" method="post" enctype="multipart/form-data">
-                <h1>Rotate</h1>
-                <input type="file" name="pdf_file" accept=".pdf">
+                <h1 >Rotate</h1>
+                <input type="file" name="pdf_file" accept=".pdf" required>
                 <label for="page_numbers">Select Pages to Rotate:</label>
-                <input type="text" name="page_numbers" placeholder="2, 3">
+                <input type="text" name="page_numbers" placeholder="2, 3" required>
         
                 <label for="degrees">Select Degrees to Rotate:</label>
-                <input type="text" name="degrees" placeholder="90, 180">
+                <input type="text" name="degrees" placeholder="90, 180" required>
         
-                <button type="submit">Rotate Pages</button>
+                <button type="submit" id="rotate-btn">Rotate Pages</button>
             </form>
         </div>
         
@@ -28,14 +28,14 @@
             <form action="/split" method="post" enctype="multipart/form-data">
                 <h1>Split</h1>
                 <input type="file" name="pdf_file" accept=".pdf">
-                
+
                 <label for="start_page">Start Page:</label>
-                <input type="text" name="start_page" placeholder="e.g., 3">
+                <input type="text" name="start_page" placeholder="1">
         
                 <label for="end_page">End Page:</label>
-                <input type="text" name="end_page" placeholder="e.g., 8">
+                <input type="text" name="end_page" placeholder="4">
         
-                <button type="submit">Split Pages</button>
+                <button type="submit" id="split-btn">Split Pages</button>
             </form>
         </div>
        
