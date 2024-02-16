@@ -2,7 +2,7 @@
 ![image](https://github.com/lookmhen/pdftools/assets/29670155/fb256cfa-7eed-4c76-be06-331549cf1a5c)
 
 
-This Flask application allows users to perform basic PDF manipulations such as rotating and splitting PDF pages through a simple web interface.
+This Flask application PDF manipulations such as rotating and splitting PDF pages through a simple web interface.
 
 ## Features
 
