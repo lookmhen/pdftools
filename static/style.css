@@ -1,84 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+
+* {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background: rgb(47, 46, 46);
-overflow: hidden;
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(77, 75, 75);
+    height: 100vh;
+    overflow: hidden;
 
 }
-input[type=text]{
+
+h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+input[type=text] {
     height: 30px;
     border-radius: 5px;
     outline: none;
     border: none;
-    
+
 }
 
-input[type=text]::placeholder{
+input[type=file] {
+    position: absolute;
+}
+
+input[type=text]::placeholder {
     text-align: center;
 }
-button{
+
+button {
     display: block;
     position: absolute;
-    top: 185px;
-    right: 215px;
-    margin: 1rem;
-    height: 2rem;
-    width: 10rem;
-    border-radius:5px ;
-    font-size: 16px;
+    padding: 0.5rem 1rem;
+    top: 210px;
+    right: 150px;
+    margin: 2rem;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 5px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 }
 
-label{
+label {
     display: inline-block;
     font-weight: bolder;
 }
-.container{
-    display:flex;
-    flex-direction: column;
+
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     margin: 1.5rem;
-    max-width: 40rem;
-    height: 800px;
+    height: auto;
     flex-wrap: wrap;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     padding: 40px 80px 80px;
 }
-#rotate-app{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    width: 40rem;
-    height: 250px;
-    margin-bottom: 3rem;
-    background: rgb(47, 255, 137);
-    border-radius: 10px;
+
+#rotate-app,
+#split-app {
+    width: 90%;
 }
 
-#split-app{
+#rotate-app {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 40rem;
-    height: 250px;
+    width: 30rem;
+    height: 300px;
+    background: #CAF2C2;
+    border-radius: 90px;
+    margin-top: 0;
+    margin-right: 5rem;
+}
+
+/* Cat Ear shape */
+#rotate-app::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -60px;
+    left: 30px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 86.6px solid #CAF2C2;
+    filter: drop-shadow(320px 0 0 #CAF2C2) drop-shadow(10px 0 0 #747773);
+    z-index: -1;
+    
+}
+
+/* หนวดแมว */
+#rotate-app::after{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    top: 120px;
+    left: -20px;
+    background: #000000;
+    box-shadow: 450px 0 #000000,0px 40px #000000 ,0px 80px #000000,450px 40px #000000,450px 80px #000000;
+    z-index: 1;
+    
+}
+
+
+
+#split-app {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 30rem;
+    height: 300px;
     margin-bottom: 10rem;
-    background: rgb(234, 247, 90);
-    border-radius: 10px;
+    background: #ffdce3;
+    border-radius: 90px;
+    margin: 1rem;
+}
+
+#split-app::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -60px;
+    left: 30px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 86.6px solid #ffdce3;
+    filter: drop-shadow(320px 0 0 #ffdce3);
+    z-index: -2;
+}
+
+/* หนวดแมว */
+#split-app::after{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    top: 120px;
+    left: -20px;
+    background: #000000;
+    box-shadow: 450px 0 #000000,0px 40px #000000 ,0px 80px #000000,450px 40px #000000,450px 80px #000000;
+    z-index: 1;
+    
 }

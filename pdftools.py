@@ -6,7 +6,6 @@ import socket
 import uuid
 import os
 import time
-import logging
 
 app = Flask(__name__)
 tempdir=app.config['UPLOAD_FOLDER'] = 'temp'
@@ -14,9 +13,6 @@ tempdir=app.config['UPLOAD_FOLDER'] = 'temp'
 # Define the maximum lifetime of a temporary file in seconds
 MAX_LIFETIME = 120  # 2 min
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 @app.route('/')
 def index():
@@ -103,9 +99,9 @@ def cleanup_temp_files():
         if file_age > MAX_LIFETIME:
             try:
                 os.remove(file_path)
-                logger.info("Removed expired file: %s", file_path)
+                print("Removed expired file: %s", file_path)
             except Exception as e:
-                logger.error("Error removing file: %s", e)
+                print("Error removing file: %s", e)
 
 
 
@@ -125,11 +121,11 @@ def run_cleanup():
 def start_server():
 
     host = socket.gethostbyname(socket.gethostname())
-    port = int(os.environ.get('PORT', 80))
+    port = int(os.environ.get('PORT', 83))
 
     ensure_temp_directory_exists()
 
-    logger.info("Starting server on %s:%d%s", host, port)
+    print(f"Starting server on http://{host}:{port}")
 
     serve(app, host=host, port=port)
 
