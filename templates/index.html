@@ -13,13 +13,13 @@
         
         <div id="rotate-app">
             <form action="/rotate" method="post" enctype="multipart/form-data">
-                <h1 >Rotate</h1>
+                <h1 class="title">Rotate</h1>
                 <input type="file" name="pdf_file" accept=".pdf" required>
                 <label for="page_numbers">Select Pages to Rotate:</label>
                 <input type="text" name="page_numbers" placeholder="2, 3" required>
         
                 <label for="degrees">Select Degrees to Rotate:</label>
-                <input type="text" name="degrees" placeholder="90, 180" required>
+                <input type="text" name="degrees" placeholder="90, 180 , -90 , 180" required>
         
                 <button type="submit" id="rotate-btn">Rotate Pages</button>
             </form>
@@ -27,14 +27,14 @@
             
         <div id="split-app">
             <form action="/split" method="post" enctype="multipart/form-data">
-                <h1>Split</h1>
-                <input type="file" name="pdf_file" accept=".pdf">
+                <h1 class="title">Split</h1>
+                <input type="file" name="pdf_file" accept=".pdf" required>
 
                 <label for="start_page">Start Page:</label>
-                <input type="text" name="start_page" placeholder="1">
+                <input type="text" name="start_page" placeholder="1" required>
         
                 <label for="end_page">End Page:</label>
-                <input type="text" name="end_page" placeholder="4">
+                <input type="text" name="end_page" placeholder="4" required>
         
                 <button type="submit" id="split-btn">Split Pages</button>
             </form>
