@@ -1,198 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
 
 * {
-    font-family: "Madimi One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgb(179, 176, 176);
-    height: 100vh;
-    overflow: hidden;
-
-}
-body h1 {
-    font-size: 4rem;
-    color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #c6c4ab;
+  height: 100vh;
+  overflow: auto;
 }
 
-.title{
-    margin-top: 1rem;
+h1 {
+  font-size: 4rem;
 }
 
-
-
-input[type=text] {
-    height: 30px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-
+.title {
+  color: black;
+  text-shadow: 5px 5px #777b77;
 }
 
-input[type=file] {
-    position: absolute;
+.label-title {
+  margin-top: 1rem;
+  text-shadow: 2px 5px #777b77;
 }
 
-input[type=text]::placeholder {
-    text-align: center;
+input[type="text"] {
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+input[type="file"] {
+  position: absolute;
+}
+
+input[type="text"]::placeholder {
+  text-align: center;
 }
 
 button {
-    display: block;
-    position: absolute;
-    padding: 0.5rem 1rem;
-    top: 210px;
-    right: 150px;
-    margin: 2rem;
-    height: 3rem;
-    width: 8rem;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
+  display: block;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  top: 210px;
+  right: 150px;
+  margin: 2rem;
+  height: 3rem;
+  width: 8rem;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-
-#rotate-app button:active{
-    background-color: #6aee50;
+#rotate-app button:active {
+  background-color: #6aee50;
 }
 
-#split-app button:active{
-    background-color: #ca3150;
+#split-app button:active {
+  background-color: #ca3150;
 }
 
 label {
-    display: inline-block;
-    font-weight: bolder;
+  display: inline-block;
+  font-weight: bolder;
 }
 
 .container {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin: 1.5rem;
-    height: auto;
-    flex-wrap: wrap;
-    gap: 3rem;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /* margin:5rem; */
+  height: 60%;
+  width: 100%;
+  gap: 6rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    padding: 40px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px 80px;
 }
 
 #rotate-app,
 #split-app {
-    width: 90%;
+  width: 90%;
 }
 
 #rotate-app {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 30rem;
-    height: 300px;
-    background: #CAF2C2;
-    border-radius: 110px 110px 150px 150px;
-    margin-top: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
-    box-shadow: 6px 10px #6aee50;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 30rem;
+  height: 300px;
+  background: #caf2c2;
+  border-radius: 110px 110px 150px 150px;
+  margin-top: 5rem;
+  margin-right: 5rem;
+  margin-bottom: 5rem;
+  box-shadow: 6px 10px #6aee50;
 }
 
 /* Cat Ear shape */
-#rotate-app::before{
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: -60px;
-    left: 30px;
-    border-radius: 20px 20px 60px 50px;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 86.6px solid #CAF2C2;
-    filter: drop-shadow(320px 0 0 #CAF2C2) drop-shadow(6px 0 0 #6aee50);
-    z-index: -1;
-    
+#rotate-app::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -40px;
+  left: 27px;
+  border-radius: 20px 20px 60px 50px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid #caf2c2;
+  filter: drop-shadow(320px 0 0 #caf2c2) drop-shadow(6px 0 0 #6aee50);
+  z-index: -1;
 }
 
 /* หนวดแมว */
-#rotate-app::after{
-    content: "";
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    top: 120px;
-    left: -30px;
-    filter: blur(3px);
-    background: #000000;
-    box-shadow: 470px 0 #000000,-10px 40px #000000 ,0px 80px #000000,485px 40px #000000,470px 80px #000000;
-    z-index: 1;
-    
+#rotate-app::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 2px;
+  top: 120px;
+  left: -30px;
+  filter: blur(3px);
+  background: #000000;
+  box-shadow: 470px 0 #000000, -10px 40px #000000, 0px 80px #000000,
+    485px 40px #000000, 470px 80px #000000;
+  z-index: 1;
 }
-
-
 
 #split-app {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 30rem;
-    height: 300px;
-    margin-bottom: 10rem;
-    background: #ffdce3;
-    border-radius: 110px 110px 150px 150px;
-    margin: 1rem;
-    box-shadow: 6px 10px #ca3150;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 30rem;
+  height: 300px;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  background: #ffdce3;
+  border-radius: 110px 110px 150px 150px;
+  box-shadow: 6px 10px #ca3150;
 }
 
 /* Cat Ear shape */
-#split-app::before{
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: -60px;
-    left: 30px;
-    border-radius: 20px 20px 60px 50px;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 86.6px solid #ffdce3;
-    filter: drop-shadow(320px 0 0 #ffdce3) drop-shadow(6px 0 0 #ca3150);
-    z-index: -1;
-    
+#split-app::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -40px;
+  left: 27px;
+  border-radius: 20px 20px 60px 50px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid #ffdce3;
+  filter: drop-shadow(320px 0 0 #ffdce3) drop-shadow(6px 0 0 #ca3150);
+  z-index: -1;
 }
 
 /* หนวดแมว */
-#split-app::after{
-    content: "";
+#split-app::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 2px;
+  top: 120px;
+  left: -30px;
+  filter: blur(3px);
+  background: #000000;
+  box-shadow: 470px 0 #000000, -10px 40px #000000, 0px 80px #000000,
+    485px 40px #000000, 470px 80px #000000;
+  text-shadow: #a4a6a4;
+  z-index: 1;
+}
+
+@media (max-width: 1180px) {
+  .container {
+    flex-direction: column;
+    gap: 0;
+    margin-left: 6rem;
+  }
+
+  .title {
     position: absolute;
-    width: 70px;
-    height: 2px;
-    top: 120px;
+    font-size: 2rem;
+    margin-top: 5rem;
+    top: 38%;
+    left: 38%;
+  }
+
+  #rotate-app {
+    margin-top:20rem ;
+   margin-bottom: 20rem;
+  }
+
+  #split-app {
+    margin-top:5rem ;
+    top: -200px;
     left: -30px;
-    filter: blur(3px);
-    background: #000000;
-    box-shadow: 470px 0 #000000,-10px 40px #000000 ,0px 80px #000000,485px 40px #000000,470px 80px #000000;
-    text-shadow: #a4a6a4;
-    z-index: 1;
-    
+  }
 }

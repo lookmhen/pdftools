@@ -8,13 +8,13 @@
 
 </head>
 <body>
-    <h1 style="color:white">PDF Rotate & Split</h1>
+    <h1 class="title">PDF Rotate & Split</h1>
     <div class="container">
         
         <div id="rotate-app">
             <form action="/rotate" method="post" enctype="multipart/form-data">
-                <h1 class="title">Rotate</h1>
-                <input type="file" name="pdf_file" accept=".pdf" required>
+                <h1 class="label-title">Rotate</h1>
+                <input type="file" id="rotate-input" name="pdf_file" accept=".pdf" required>
                 <label for="page_numbers">Select Pages to Rotate:</label>
                 <input type="text" name="page_numbers" placeholder="2, 3" required>
         
@@ -27,7 +27,7 @@
             
         <div id="split-app">
             <form action="/split" method="post" enctype="multipart/form-data">
-                <h1 class="title">Split</h1>
+                <h1 class="label-title">Split</h1>
                 <input type="file" name="pdf_file" accept=".pdf" required>
 
                 <label for="start_page">Start Page:</label>
@@ -41,6 +41,7 @@
         </div>
        
     </div>
-    
+    <script src="{{url_for('static',filename='script.js')}}"></script>
 </body>
+
 </html>
