@@ -6,7 +6,8 @@ This Flask application PDF manipulations such as rotating and splitting PDF page
 
 ## Features
 
-- **Rotate PDF Pages:** Users can rotate specified pages of a PDF by a given degree (90, 180, 270).
+- **Rotate PDF Pages:** Users can rotate specified pages of a PDF by a given degree example Clockwise and CounterClockwise (90, 180, -90 -180).
 - **Split PDF Pages:** Users can extract a range of pages from a PDF to create a new PDF document.
+- 
 
 
