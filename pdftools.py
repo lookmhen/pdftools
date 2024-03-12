@@ -40,10 +40,11 @@ def process_pdf(processing_function):
         with open(output_filename, "wb") as fp:
             writer.write(fp)
 
-        # Attempt to send the file to the client
+        # Attempt to send the processed file to the client.
         try:
             return send_file(output_filename, as_attachment=True)
         finally:
+            # Cleanup: remove the temporary file.
             try:
                 os.remove(temp_filename)
                 print(f"Temporary file '{temp_filename}' successfully removed.")
@@ -63,6 +64,10 @@ def rotate_pages():
         page_numbers = list(map(int, page_numbers_input.split(',')))
         degrees = list(map(int, degrees_input.split(',')))
         
+        # Check if all specified page numbers are within the valid range
+        if any(page_num <= 0 or page_num > len(reader.pages) for page_num in page_numbers):
+            return "Invalid page number provided pls try again."
+        
         for i in range(len(reader.pages)):
             page = reader.pages[i]
             if i + 1 in page_numbers:
@@ -80,8 +85,12 @@ def split_pages():
 
         start_page = int(start_page_input)
         end_page = int(end_page_input)
+        
+        # Validate the specified range of pages
+        if start_page <= 0 or end_page > len(reader.pages) or start_page > end_page:
+            return "Invalid page range provided pls try again."
 
-        for page_num in range(start_page - 1, end_page):
+        for page_num in range(start_page - 1, end_page):  # Iterate through pages from 'start_page' to 'end_page'. Subtract 1 from 'start_page' to align user input (1-indexed) with Python's 0-indexed lists.
             page = reader.pages[page_num]
             writer.add_page(page)
 
