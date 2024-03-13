@@ -57,22 +57,33 @@ def process_pdf(processing_function):
 @app.route('/rotate', methods=['POST'])
 def rotate_pages():
     def rotate_function(reader, writer):
-        page_numbers_input = request.form['page_numbers']
-        degrees_input = request.form['degrees']
+        page_numbers_input = request.form.get('page_numbers', '')  # Use get to handle missing keys
+        degrees_input = request.form.get('degrees', '')  # Use get to handle missing keys
 
-        # Use default values if form values are not provided
-        page_numbers = list(map(int, page_numbers_input.split(',')))
-        degrees = list(map(int, degrees_input.split(',')))
-        
-        # Check if all specified page numbers are within the valid range
-        if any(page_num <= 0 or page_num > len(reader.pages) for page_num in page_numbers):
-            return "Invalid page number provided pls try again."
-        
-        for i in range(len(reader.pages)):
-            page = reader.pages[i]
-            if i + 1 in page_numbers:
-                page.rotate(degrees[page_numbers.index(i + 1)])
-            writer.add_page(page)
+        if page_numbers_input == 'all':
+            # Rotate all pages by the specified degree
+            try:
+                degree = int(degrees_input)
+            except ValueError:
+                return "Invalid degree. Please provide a valid integer."
+
+            for page in reader.pages:
+                page.rotate(degree)
+                writer.add_page(page)
+        else:
+            # Use default values if form values are not provided
+            page_numbers = list(map(int, page_numbers_input.split(',')))
+            degrees = list(map(int, degrees_input.split(',')))
+            
+            # Check if all specified page numbers are within the valid range
+            if any(page_num <= 0 or page_num > len(reader.pages) for page_num in page_numbers):
+                return "Invalid page number provided. Please try again."
+            
+            for i in range(len(reader.pages)):
+                page = reader.pages[i]
+                if i + 1 in page_numbers:
+                    page.rotate(degrees[page_numbers.index(i + 1)])
+                writer.add_page(page)
 
     return process_pdf(rotate_function)
 
