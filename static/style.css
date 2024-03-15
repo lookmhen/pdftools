@@ -16,6 +16,7 @@ body {
   align-items: center;
   background: #c6c4ab;
   height: 100vh;
+  width: 100vw;
   overflow: auto;
 }
 
@@ -194,27 +195,34 @@ form {
 
 @media (max-width: 1180px) {
   .container {
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1fr;
+    justify-items: center;
+    gap: 1rem;
     margin-left: 6rem;
   }
 
   .title {
-    position: absolute;
-    font-size: 2rem;
-    margin-top: 5rem;
-    top: 38%;
-    left: 38%;
+   font-size: 3rem;
   }
 
   #rotate-app {
-    margin-top:20rem ;
-   margin-bottom: 20rem;
+    margin-bottom: 1rem;
   }
 
-  #split-app {
-    margin-top:5rem ;
-    top: -200px;
-    left: -30px;
+  split-app {
+    position: absolute;
+    left: 150px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container::before{
+    margin-top:10rem;
+    width: 70%;
+  }
+  #rotate-app {
+   width: 500px;
   }
 }
