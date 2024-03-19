@@ -21,6 +21,14 @@ dropAreas.forEach(dropArea => {
       }
     }, false);
   });
+
+  // 'dblclick' event listener to open the file browser
+  dropArea.addEventListener('dblclick', () => {
+    const fileInput = dropArea.querySelector('input[type="file"]');
+    if (fileInput) {
+      fileInput.click(); // Triggers the file input's click event, which opens the file browser
+    }
+  });
 });
 
 // Function to handle dropped files
