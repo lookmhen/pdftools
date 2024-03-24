@@ -31,10 +31,34 @@ dropAreas.forEach(dropArea => {
   });
 });
 
+
+
 // Function to handle dropped files
 function handleFiles(files, dropArea) {
   const input = dropArea.querySelector('input[type="file"]');
   input.files = files; // Set dropped files to the input element
+  showName(input,dropArea)
+}
+
+
+//show filename
+function showName(input, dropArea){
+  let showname;
+  if (dropArea.id === "rotate-app") {
+    showname = document.getElementById("rotate-filename");
+    showname.style.color = "red"; // Blue color for split filename
+    showname.style.border="1px dashed #fff"
+  } else if (dropArea.id === "split-app") {
+    showname = document.getElementById("split-filename");
+    showname.style.color = "blue"; // Different color, e.g., Orange for rotate filename
+  }
+  
+  showname.textContent = input.files[0].name?.slice(0,30); //slice limit charactor 30
+  showname.style.fontWeight = "Bold";
+  showname.style.textDecoration = "underline";
+
+  const label = dropArea.querySelector('label[for="file"]');
+  label.textContent = "";
 }
 
 // Add event listener for when files are selected through the file input element

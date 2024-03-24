@@ -88,6 +88,7 @@ def rotate_pages():
     return process_pdf(rotate_function)
 
 
+
 @app.route('/split', methods=['POST'])
 def split_pages():
     def split_function(reader, writer):
@@ -106,6 +107,7 @@ def split_pages():
             writer.add_page(page)
 
     return process_pdf(split_function)
+
 
 
 def cleanup_temp_files():

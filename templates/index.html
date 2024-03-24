@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type"text/css" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
     <title>PDF Manipulator</title>
 
 </head>
@@ -14,6 +14,7 @@
         <div id="rotate-app" class="drop-area">
             <form action="/rotate" method="post" enctype="multipart/form-data">
                 <h1 class="label-title">Rotate</h1>
+                <span id="rotate-filename"></span>
                 <input type="file" id="rotate-input" name="pdf_file" accept=".pdf" required>
                 <label for="page_numbers">Select Pages to Rotate:</label>
                 <input type="text" name="page_numbers" placeholder="2, 3" required>
@@ -28,6 +29,7 @@
         <div id="split-app" class="drop-area">
             <form action="/split" method="post" enctype="multipart/form-data">
                 <h1 class="label-title">Split</h1>
+                <span id="split-filename"></span>
                 <input type="file" name="pdf_file" accept=".pdf" required>
 
                 <label for="start_page">Start Page:</label>
