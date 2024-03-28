@@ -60,7 +60,7 @@ def rotate_pages():
         page_numbers_input = request.form.get('page_numbers', '')  # Use get to handle missing keys
         degrees_input = request.form.get('degrees', '')  # Use get to handle missing keys
 
-        if page_numbers_input == 'all':
+        if page_numbers_input.lower() == 'all' or any(char.isupper() for char in page_numbers_input):
             # Rotate all pages by the specified degree
             try:
                 degree = int(degrees_input)
