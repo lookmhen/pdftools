@@ -147,7 +147,7 @@ def start_server():
 
     ensure_temp_directory_exists()
 
-    print(f"Starting server on http://{host}:{port}")
+    print(f"Starting Rotate & Splitserver on http://{host}:{port}")
 
     serve(app, host=host, port=port)
 

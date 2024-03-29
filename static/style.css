@@ -46,7 +46,7 @@ input[type="file"] {
   position: absolute;
 }
 
-input[type="text"]::placeholder {
+input[type="text"],input[type="text"]::placeholder {
   text-align: center;
 }
 
